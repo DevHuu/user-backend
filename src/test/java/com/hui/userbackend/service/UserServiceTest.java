@@ -1,6 +1,7 @@
 package com.hui.userbackend.service;
 
 import com.hui.userbackend.model.domain.User;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
@@ -17,6 +18,7 @@ public class UserServiceTest {
 
     @Resource
     private UserService userService;
+
 
     @Test
     public void testAddUser() {
@@ -35,5 +37,14 @@ public class UserServiceTest {
         boolean result = userService.save(user);
         System.out.printf("userId:%s", user.getId());
         Assert.isTrue(result, "失败");
+    }
+
+    @Test
+    public void testRegister() {
+        String username = "aaa";
+        String password = "123";
+        String checkPass = "456";
+        long result = userService.userRegister(username, password, checkPass, null);
+        Assertions.assertEquals(-1, result);
     }
 }

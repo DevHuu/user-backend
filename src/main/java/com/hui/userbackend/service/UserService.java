@@ -3,6 +3,8 @@ package com.hui.userbackend.service;
 import com.hui.userbackend.model.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
 * @author liujh
 * @description 针对表【user】的数据库操作Service
@@ -15,4 +17,7 @@ public interface UserService extends IService<User> {
      */
     long userRegister(String userAccount, String userPassword, String checkPassword, String planetCode);
 
+    User doLogin(String userAccount, String userPassword, HttpServletRequest request);
+
+    User getSafetyUser(User originUser);
 }
