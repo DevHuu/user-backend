@@ -22,7 +22,7 @@ import static com.hui.userbackend.constant.UserConstant.USER_LOGIN_STATE;
  */
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Resource
