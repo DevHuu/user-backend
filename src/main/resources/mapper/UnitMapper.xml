@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.UnitMapper">
+
+    <resultMap id="BaseResultMap" type="com.hui.userbackend.model.domain.Unit">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="unitId" column="unit_id" jdbcType="BIGINT"/>
+            <result property="advertiserId" column="advertiser_id" jdbcType="BIGINT"/>
+            <result property="campaignId" column="campaign_id" jdbcType="BIGINT"/>
+            <result property="unitName" column="unit_name" jdbcType="VARCHAR"/>
+            <result property="eventBid" column="event_bid" jdbcType="INTEGER"/>
+            <result property="promotionTarget" column="promotion_target" jdbcType="TINYINT"/>
+            <result property="targetType" column="target_type" jdbcType="TINYINT"/>
+            <result property="keywordTargetPeriod" column="keyword_target_period" jdbcType="TINYINT"/>
+            <result property="keywordTargetAction" column="keyword_target_action" jdbcType="VARCHAR"/>
+            <result property="businessTreeName" column="business_tree_name" jdbcType="VARCHAR"/>
+            <result property="substitutedUserId" column="substituted_user_id" jdbcType="VARCHAR"/>
+            <result property="keywordGenType" column="keyword_gen_type" jdbcType="TINYINT"/>
+            <result property="pageId" column="page_id" jdbcType="VARCHAR"/>
+            <result property="landingPageUrl" column="landing_page_url" jdbcType="VARCHAR"/>
+            <result property="unitExternalPageUrl" column="unit_external_page_url" jdbcType="VARCHAR"/>
+            <result property="unitLandingPageDesc" column="unit_landing_page_desc" jdbcType="VARCHAR"/>
+            <result property="targetTemplateId" column="target_template_id" jdbcType="BIGINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,unit_id,advertiser_id,
+        campaign_id,unit_name,event_bid,
+        promotion_target,target_type,keyword_target_period,
+        keyword_target_action,business_tree_name,substituted_user_id,
+        keyword_gen_type,page_id,landing_page_url,
+        unit_external_page_url,unit_landing_page_desc,target_template_id,
+        create_time,update_time,is_delete
+    </sql>
+</mapper>

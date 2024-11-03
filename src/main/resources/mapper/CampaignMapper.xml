@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.CampaignMapper">
+
+    <resultMap id="BaseResultMap" type="com.hui.userbackend.model.domain.Campaign">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="campaignId" column="campaign_id" jdbcType="BIGINT"/>
+            <result property="advertiserId" column="advertiser_id" jdbcType="BIGINT"/>
+            <result property="marketingTarget" column="marketing_target" jdbcType="TINYINT"/>
+            <result property="campaignName" column="campaign_name" jdbcType="VARCHAR"/>
+            <result property="placement" column="placement" jdbcType="TINYINT"/>
+            <result property="promotionTarget" column="promotion_target" jdbcType="TINYINT"/>
+            <result property="enable" column="enable" jdbcType="TINYINT"/>
+            <result property="timeType" column="time_type" jdbcType="TINYINT"/>
+            <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
+            <result property="expireTime" column="expire_time" jdbcType="TIMESTAMP"/>
+            <result property="timePeriodType" column="time_period_type" jdbcType="TINYINT"/>
+            <result property="timePeriod" column="time_period" jdbcType="VARCHAR"/>
+            <result property="biddingStrategy" column="bidding_strategy" jdbcType="TINYINT"/>
+            <result property="limitDayBudget" column="limit_day_budget" jdbcType="TINYINT"/>
+            <result property="campaignDayBudget" column="campaign_day_budget" jdbcType="INTEGER"/>
+            <result property="optimizeTarget" column="optimize_target" jdbcType="TINYINT"/>
+            <result property="constraintType" column="constraint_type" jdbcType="TINYINT"/>
+            <result property="smartSwitch" column="smart_switch" jdbcType="TINYINT"/>
+            <result property="pacingMode" column="pacing_mode" jdbcType="TINYINT"/>
+            <result property="feedFlag" column="feed_flag" jdbcType="TINYINT"/>
+            <result property="buildType" column="build_type" jdbcType="TINYINT"/>
+            <result property="eventAssetId" column="event_asset_id" jdbcType="BIGINT"/>
+            <result property="assetEvent" column="asset_event" jdbcType="SMALLINT"/>
+            <result property="assetEventId" column="asset_event_id" jdbcType="BIGINT"/>
+            <result property="pageCategory" column="page_category" jdbcType="TINYINT"/>
+            <result property="searchFlag" column="search_flag" jdbcType="TINYINT"/>
+            <result property="targetExtensionSwitch" column="target_extension_switch" jdbcType="TINYINT"/>
+            <result property="searchBidRatio" column="search_bid_ratio" jdbcType="TINYINT"/>
+            <result property="deeplinkId" column="deeplink_id" jdbcType="BIGINT"/>
+            <result property="universalLinkId" column="universal_link_id" jdbcType="BIGINT"/>
+            <result property="detectUrlLink" column="detect_url_link" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,campaign_id,advertiser_id,
+        marketing_target,campaign_name,placement,
+        promotion_target,enable,time_type,
+        start_time,expire_time,time_period_type,
+        time_period,bidding_strategy,limit_day_budget,
+        campaign_day_budget,optimize_target,constraint_type,
+        smart_switch,pacing_mode,feed_flag,
+        build_type,event_asset_id,asset_event,
+        asset_event_id,page_category,search_flag,
+        target_extension_switch,search_bid_ratio,deeplink_id,
+        universal_link_id,detect_url_link,create_time,
+        update_time,is_delete
+    </sql>
+</mapper>
