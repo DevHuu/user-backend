@@ -11,6 +11,7 @@ import com.hui.userbackend.service.ConfigService;
 import com.hui.userbackend.service.XiaohsService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
@@ -19,6 +20,7 @@ import javax.annotation.Resource;
  * @date 2024/11/2
  */
 @Slf4j
+@Service
 public class XiaohsServiceImpl implements XiaohsService, ConfigConstant {
 
     private final String ASSERTION_TEMPLATE = "[Assertion failed] - argument {} must not be null, empty, or blank";
@@ -154,6 +156,9 @@ public class XiaohsServiceImpl implements XiaohsService, ConfigConstant {
         configService.saveTokenInfo(ACCESS_TOKEN_EXPIRES_IN, String.valueOf(accessTokenExpiresIn));
         configService.saveTokenInfo(REFRESH_TOKEN, refreshToken);
         configService.saveTokenInfo(REFRESH_TOKEN_EXPIRES_IN, String.valueOf(refreshTokenExpiresIn));
+        // 记录当前时间
+        long currentTimeMillis = System.currentTimeMillis();
+        configService.saveTokenInfo(UPDATE_TIME, String.valueOf(currentTimeMillis));
         return accessToken;
     }
 
@@ -165,7 +170,9 @@ public class XiaohsServiceImpl implements XiaohsService, ConfigConstant {
      */
     private boolean checkExpiresIn(String expiresInStr) {
         long expiresIn = Long.parseLong(expiresInStr);
+        String updateTime = configService.findTokenValue(UPDATE_TIME);
+        long updateTimeLong = Long.parseLong(updateTime) / 1000 + expiresIn;
         long currentTimeMillis = System.currentTimeMillis() / 1000;
-        return (expiresIn - (5 * 60)) > currentTimeMillis;
+        return (updateTimeLong - (5 * 60)) > currentTimeMillis;
     }
 }

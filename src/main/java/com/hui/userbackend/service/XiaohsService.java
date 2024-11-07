@@ -1,8 +1,5 @@
 package com.hui.userbackend.service;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
 /**
  * 小红书服务类
  * @author liujh

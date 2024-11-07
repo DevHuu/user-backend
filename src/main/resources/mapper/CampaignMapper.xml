@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.CampaignMapper">
+<mapper namespace="com.hui.userbackend.mapper.CampaignMapper">
 
     <resultMap id="BaseResultMap" type="com.hui.userbackend.model.domain.Campaign">
             <id property="id" column="id" jdbcType="BIGINT"/>
@@ -33,7 +33,7 @@
             <result property="pageCategory" column="page_category" jdbcType="TINYINT"/>
             <result property="searchFlag" column="search_flag" jdbcType="TINYINT"/>
             <result property="targetExtensionSwitch" column="target_extension_switch" jdbcType="TINYINT"/>
-            <result property="searchBidRatio" column="search_bid_ratio" jdbcType="TINYINT"/>
+            <result property="searchBidRatio" column="search_bid_ratio" jdbcType="FLOAT"/>
             <result property="deeplinkId" column="deeplink_id" jdbcType="BIGINT"/>
             <result property="universalLinkId" column="universal_link_id" jdbcType="BIGINT"/>
             <result property="detectUrlLink" column="detect_url_link" jdbcType="VARCHAR"/>

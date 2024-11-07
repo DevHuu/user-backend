@@ -2,6 +2,7 @@ package com.hui.userbackend.service.impl;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hui.userbackend.converter.CampaignRequestConverter;
 import com.hui.userbackend.mapper.CampaignMapper;
 import com.hui.userbackend.model.domain.Campaign;
 import com.hui.userbackend.model.dto.CampaignRequestDTO;
@@ -27,6 +28,9 @@ public class CampaignServiceImpl extends ServiceImpl<CampaignMapper, Campaign>
     @Resource
     private XiaohsService xiaohsService;
 
+    @Resource
+    private CampaignRequestConverter campaignRequestConverter;
+
     /**
      * 创建计划
      */
@@ -36,7 +40,7 @@ public class CampaignServiceImpl extends ServiceImpl<CampaignMapper, Campaign>
         if (campaign == null) {
             throw new NoSuchElementException();
         }
-        CampaignRequestDTO requestDTO = converterRequestDTO(campaign);
+        CampaignRequestDTO requestDTO = campaignRequestConverter.converter(campaign);
         String param = JSONUtil.toJsonStr(requestDTO);
         String result = xiaohsService.createCampaign(param);
         CampaignResultDTO resultDTO = JSONUtil.toBean(result, CampaignResultDTO.class);
@@ -48,15 +52,6 @@ public class CampaignServiceImpl extends ServiceImpl<CampaignMapper, Campaign>
             log.error("创建计划失败。id：{}，结果：{}", id, result);
             return false;
         }
-    }
-
-    /**
-     * 装换请求参数
-     * @param campaign
-     * @return
-     */
-    private CampaignRequestDTO converterRequestDTO(Campaign campaign) {
-        return null;
     }
 }
 

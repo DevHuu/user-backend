@@ -1,10 +1,14 @@
 package com.hui.userbackend.service;
 
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUtil;
 import com.hui.userbackend.constant.ConfigConstant;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * @author liujh
@@ -30,10 +34,14 @@ class ConfigServiceTest implements ConfigConstant {
 
     @Test
     void testFindToken() {
-        System.out.println(configService.findTokenValue(ACCESS_TOKEN));
-        System.out.println(configService.findTokenValue(ACCESS_TOKEN_EXPIRES_IN));
-        System.out.println(configService.findTokenValue(REFRESH_TOKEN));
-        System.out.println(configService.findTokenValue(REFRESH_TOKEN_EXPIRES_IN));
+        //System.out.println(configService.findTokenValue(ACCESS_TOKEN));
+        //System.out.println(configService.findTokenValue(ACCESS_TOKEN_EXPIRES_IN));
+        //System.out.println(configService.findTokenValue(REFRESH_TOKEN));
+        //System.out.println(configService.findTokenValue(REFRESH_TOKEN_EXPIRES_IN));
+        //System.out.println(configService.findTokenValue(REFRESH_TOKEN_EXPIRES_IN));
+        DateTime offset = DateUtil.offset(new Date(), DateField.DAY_OF_MONTH, 1);
+        System.out.println(offset);
+        System.out.println(offset.getTime());
     }
 
     @Test

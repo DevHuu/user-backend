@@ -16,7 +16,7 @@ public class CampaignRequestDTO {
      * advertiserId
      */
     @Alias("advertiser_id")
-    private Integer advertiserId;
+    private Long advertiserId;
     /**
      * marketingTarget
      */
@@ -116,7 +116,7 @@ public class CampaignRequestDTO {
      * eventAssetId
      */
     @Alias("event_asset_id")
-    private Integer eventAssetId;
+    private Long eventAssetId;
     /**
      * assetEvent
      */
@@ -126,7 +126,7 @@ public class CampaignRequestDTO {
      * assetEventId
      */
     @Alias("asset_event_id")
-    private Integer assetEventId;
+    private Long assetEventId;
     /**
      * pageCategory
      */
@@ -146,17 +146,17 @@ public class CampaignRequestDTO {
      * searchBidRatio
      */
     @Alias("search_bid_ratio")
-    private Integer searchBidRatio;
+    private Double searchBidRatio;
     /**
      * deeplinkId
      */
     @Alias("deeplink_id")
-    private Integer deeplinkId;
+    private Long deeplinkId;
     /**
      * universalLinkId
      */
     @Alias("universal_link_id")
-    private Integer universalLinkId;
+    private Long universalLinkId;
     /**
      * detectUrlLink
      */

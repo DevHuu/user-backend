@@ -17,6 +17,8 @@ public interface ConfigConstant {
     String REFRESH_TOKEN = "refreshToken";
 
     String REFRESH_TOKEN_EXPIRES_IN = "refreshTokenExpiresIn";
+
+    String UPDATE_TIME = "updateTime";
     /**********Token end**********/
 
     /**********Account begin**********/

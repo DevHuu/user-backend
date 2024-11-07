@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.UnitMapper">
+<mapper namespace="com.hui.userbackend.mapper.UnitMapper">
 
     <resultMap id="BaseResultMap" type="com.hui.userbackend.model.domain.Unit">
             <id property="id" column="id" jdbcType="BIGINT"/>
@@ -11,6 +11,7 @@
             <result property="campaignId" column="campaign_id" jdbcType="BIGINT"/>
             <result property="unitName" column="unit_name" jdbcType="VARCHAR"/>
             <result property="eventBid" column="event_bid" jdbcType="INTEGER"/>
+            <result property="noteIds" column="note_ids" jdbcType="VARCHAR"/>
             <result property="promotionTarget" column="promotion_target" jdbcType="TINYINT"/>
             <result property="targetType" column="target_type" jdbcType="TINYINT"/>
             <result property="keywordTargetPeriod" column="keyword_target_period" jdbcType="TINYINT"/>
@@ -23,6 +24,18 @@
             <result property="unitExternalPageUrl" column="unit_external_page_url" jdbcType="VARCHAR"/>
             <result property="unitLandingPageDesc" column="unit_landing_page_desc" jdbcType="VARCHAR"/>
             <result property="targetTemplateId" column="target_template_id" jdbcType="BIGINT"/>
+            <result property="targetGender" column="target_gender" jdbcType="VARCHAR"/>
+            <result property="targetAge" column="target_age" jdbcType="VARCHAR"/>
+            <result property="targetCity" column="target_city" jdbcType="VARCHAR"/>
+            <result property="targetDevice" column="target_device" jdbcType="VARCHAR"/>
+            <result property="industryInterestTarget" column="industry_interest_target" jdbcType="VARCHAR"/>
+            <result property="crowdTarget" column="crowd_target" jdbcType="VARCHAR"/>
+            <result property="interestKeywords" column="interest_keywords" jdbcType="VARCHAR"/>
+            <result property="keywords" column="keywords" jdbcType="VARCHAR"/>
+            <result property="intelligentExpansion" column="intelligent_expansion" jdbcType="TINYINT"/>
+            <result property="searchTargetCityIntent" column="search_target_city_intent" jdbcType="VARCHAR"/>
+            <result property="spuNoteInfo" column="spu_note_info" jdbcType="VARCHAR"/>
+            <result property="keywordWithBid" column="keyword_with_bid" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
             <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
@@ -31,10 +44,15 @@
     <sql id="Base_Column_List">
         id,unit_id,advertiser_id,
         campaign_id,unit_name,event_bid,
-        promotion_target,target_type,keyword_target_period,
-        keyword_target_action,business_tree_name,substituted_user_id,
-        keyword_gen_type,page_id,landing_page_url,
-        unit_external_page_url,unit_landing_page_desc,target_template_id,
-        create_time,update_time,is_delete
+        note_ids,promotion_target,target_type,
+        keyword_target_period,keyword_target_action,business_tree_name,
+        substituted_user_id,keyword_gen_type,page_id,
+        landing_page_url,unit_external_page_url,unit_landing_page_desc,
+        target_template_id,target_gender,target_age,
+        target_city,target_device,industry_interest_target,
+        crowd_target,interest_keywords,keywords,
+        intelligent_expansion,search_target_city_intent,spu_note_info,
+        keyword_with_bid,create_time,update_time,
+        is_delete
     </sql>
 </mapper>

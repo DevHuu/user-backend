@@ -47,7 +47,7 @@ class CampaignServiceTest {
         campaign.setPageCategory(0);
         campaign.setSearchFlag(0);
         campaign.setTargetExtensionSwitch(0);
-        campaign.setSearchBidRatio(0);
+        campaign.setSearchBidRatio(1.0);
         campaign.setDeeplinkId(0L);
         campaign.setUniversalLinkId(0L);
         campaign.setDetectUrlLink("22222");

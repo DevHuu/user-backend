@@ -2,6 +2,7 @@ package com.hui.userbackend.service.impl;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hui.userbackend.converter.UnitRequestConverter;
 import com.hui.userbackend.mapper.UnitMapper;
 import com.hui.userbackend.model.domain.Unit;
 import com.hui.userbackend.model.dto.UnitRequestDTO;
@@ -27,6 +28,9 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit>
     @Resource
     private XiaohsService xiaohsService;
 
+    @Resource
+    private UnitRequestConverter unitRequestConverter;
+
     /**
      * 创建计划
      */
@@ -36,7 +40,7 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit>
         if (unit == null) {
             throw new NoSuchElementException();
         }
-        UnitRequestDTO requestDTO = converterRequestDTO(unit);
+        UnitRequestDTO requestDTO = unitRequestConverter.converter(unit);
         String param = JSONUtil.toJsonStr(requestDTO);
         String result = xiaohsService.createUnit(param);
         UnitResultDTO resultDTO = JSONUtil.toBean(result, UnitResultDTO.class);
@@ -48,15 +52,6 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit>
             log.error("创建单元失败。id：{}，结果：{}", id, result);
             return false;
         }
-    }
-
-    /**
-     * 装换请求参数
-     * @param unit
-     * @return
-     */
-    private UnitRequestDTO converterRequestDTO(Unit unit) {
-        return null;
     }
 
 }
