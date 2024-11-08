@@ -4,10 +4,10 @@ FROM openjdk:8-jre-alpine
 
 # Copy local code to the container image.
 WORKDIR /app
-COPY user-backend-0.0.1-SNAPSHOT.jar ./target
+COPY user-backend-0.0.1-SNAPSHOT.jar ./
 
 # Build a release artifact.
 #RUN mvn package -DskipTests
 
 # Run the web service on container startup.
-CMD ["java","-jar","/app/target/user-backend-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar","/app/user-backend-0.0.1-SNAPSHOT.jar"]
